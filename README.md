@@ -42,12 +42,12 @@ Ideally you want to follow these recommendations when decided where to store you
 - Inside a hidden folder
 
 ## How to ssh into a remote server?
-To SSH into a remote server you 
+To SSH into a remote server
 
  by using the following command 
- `ws.com-i "eng74benawskey.pem" ubuntu@ec2-34-253-221-86.eu-west-1.compute.amazonaw`
+ `ssh -i "~/.ssh/eng89_devops.pem" ubuntu@ec2-34-253-221-86.eu-west-1.compute.amazonaws.com`
 
-## How to send in 1 file to remote server
+## How to send in 1 file to remoted server
 1) first navigate to the directory where the file is located that you wish to send over.
 2) enter `scp -i ~/.ssh/<ssh key> <file name> ubuntu@<server public id>:~<desired file location>`
 3) access your AWS server and check the location for the file
@@ -63,5 +63,5 @@ To SSH into a remote server you
 2) Next, change the port80.default file using `nano port80.default` inside the AWS instance and replace the IP with the public IP displayed on AWS for your instance. Save the file
 3) Then, copy the provisions.sh and port80.default files from our app directory into our AWS instance at  /home/ubuntu/environment which is done using 
 `$ scp -i ~/.ssh/<ssh key> -r <folder name> ubuntu@<server public id>6:<desired file location>`
-4) Enter the AWS instance by using `ws.com-i "eng74benawskey.pem" ubuntu@ec2-34-253-221-86.eu-west-1.compute.amazonaw`
+4) Enter the AWS instance by using `ssh -i "eng89_devops.pem" ubuntu@ec2-34-253-221-86.eu-west-1.compute.amazonaws.com`
 5) Navigate to the /home/ubuntu/environment folder and run `./provisions.sh` to launch the app.
